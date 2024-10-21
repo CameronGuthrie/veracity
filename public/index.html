@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Debunker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Veracity</h1>
+        <form id="inputSubmissionForm">
+            <div class="form-group">
+                <label for="userInput">Input Statement</label>
+                <textarea id="userInput" class="form-control" rows="6" placeholder="Enter the statement you want evaluated"></textarea>
+            </div>
+
+            <p id="error" class="error" style="display: none;"></p>
+
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+
+        <div id="responseContainer" style="display: none;">
+            <div id="resultBox">
+                <p id="score" class="score"></p>
+                <p id="evidence" class="evidence"></p>
+            </div>
+            <div id="breakdownContainer" class="breakdown-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
