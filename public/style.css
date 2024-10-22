@@ -126,3 +126,94 @@ pre code {
 table, td {
     padding-top: 1em;
 }
+
+/* Loading Indicator */
+#loadingIndicator {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #2980b9;
+}
+
+/* Spinner Styles */
+.spinner {
+    margin: 0 auto 10px auto;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #2980b9;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Quill Editor Styling */
+#editor {
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.ql-toolbar.ql-snow {
+    border-radius: 4px 4px 0 0;
+}
+
+.ql-container.ql-snow {
+    border-radius: 0 0 4px 4px;
+}
+
+
+/* Veracity Bar Container */
+#veracityBarContainer {
+    margin-bottom: 20px;
+}
+
+#veracityBarLabels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.progress-bar {
+    position: relative;
+    height: 25px;
+    background-color: #ecf0f1;
+    border-radius: 12.5px;
+    overflow: hidden;
+}
+
+#veracityBarFill {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: #27ae60; /* Default color */
+    border-radius: 12.5px 0 0 12.5px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+#veracityBarText {
+    position: absolute;
+}
+
+.low-veracity {
+    background-color: #e74c3c;
+}
+
+.medium-veracity {
+    background-color: #f1c40f;
+}
+
+.high-veracity {
+    background-color: #27ae60;
+}
