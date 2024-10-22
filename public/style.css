@@ -184,16 +184,18 @@ table, td {
     position: relative;
     height: 25px;
     background-color: #ecf0f1;
-    border-radius: 12.5px;
+    border-radius: 4px;
     overflow: hidden;
 }
 
+/* Update the progress bar fill */
 #veracityBarFill {
     position: absolute;
     height: 100%;
     width: 0%;
-    background-color: #27ae60; /* Default color */
-    border-radius: 12.5px 0 0 12.5px;
+    min-width: 5%; /* Ensure a minimum width */
+    background-color: #aaaaaa; /* Default color for high veracity */
+    border-radius: 4px 0 0 4px;
     transition: width 0.5s ease;
     display: flex;
     align-items: center;
@@ -207,13 +209,13 @@ table, td {
 }
 
 .low-veracity {
-    background-color: #e74c3c;
+    background-color: #e74c3c !important;
 }
 
 .medium-veracity {
-    background-color: #f1c40f;
+    background-color: #f1c40f !important;
 }
 
 .high-veracity {
-    background-color: #27ae60;
+    background-color: #27ae60 !important;
 }

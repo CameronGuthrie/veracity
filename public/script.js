@@ -34,7 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function clearPreviousResponse() {
-        // scoreElement.textContent = '';
+        const veracityBarFill = document.getElementById('veracityBarFill');
+        veracityBarFill.style.width = '0%';
+        veracityBarFill.classList.remove('low-veracity', 'medium-veracity', 'high-veracity');
+    
+        const veracityBarText = document.getElementById('veracityBarText');
+        veracityBarText.textContent = '';
+    
         evidenceElement.textContent = '';
         breakdownContainer.innerHTML = '';
         responseContainer.style.display = 'none';
@@ -42,13 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function mapVeracityScore(score) {
         const scoreMapping = {
-            "Very Low": { percentage: 0, colorClass: 'low-veracity' },
+            "Very Low": { percentage: 5, colorClass: 'low-veracity' }, // Set to 5% instead of 0%
             "Low": { percentage: 25, colorClass: 'low-veracity' },
             "Medium": { percentage: 50, colorClass: 'medium-veracity' },
             "High": { percentage: 75, colorClass: 'high-veracity' },
             "Very High": { percentage: 100, colorClass: 'high-veracity' },
         };
-        return scoreMapping[score] || { percentage: 0, colorClass: 'low-veracity' };
+        return scoreMapping[score] || { percentage: 5, colorClass: 'low-veracity' };
     }
     
     async function submitInput(input) {
@@ -85,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Update the veracity bar
                     const veracityBarFill = document.getElementById('veracityBarFill');
                     const { percentage, colorClass } = mapVeracityScore(data.score);const veracityBarText = document.getElementById('veracityBarText');
-                    veracityBarText.textContent = data.score;
-    
+                    // veracityBarText.textContent = data.score;
+                    veracityBarText.textContent = '';
                     veracityBarFill.style.width = `${percentage}%`;
     
                     // Remove existing color classes
